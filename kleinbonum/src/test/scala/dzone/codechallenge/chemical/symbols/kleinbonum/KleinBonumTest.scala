@@ -6,6 +6,7 @@ import org.scalatest.FlatSpec
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import java.lang.reflect.InvocationTargetException
+import scala.util.Random
 
 /**
  * Tests functions in {@link KleinBonum}
@@ -118,5 +119,12 @@ class KleinBonumTest extends FlatSpec with Matchers {
     }
     
     ex.getCause.getClass should be (classOf[UnsupportedOperationException])
+  }
+  
+  "Long names" should "should work" in {
+    val chars = "abcdefghijklmnopqrstuvwxyz".toCharArray
+    val rnd = new Random
+    val veryLongName = new String((for {i <- 0 to 1000} yield(chars(rnd.nextInt(chars.length)))).toArray)
+    KleinBonum.checkSymbolFor(veryLongName, veryLongName.substring(0, 2)) should be (true)
   }
 }

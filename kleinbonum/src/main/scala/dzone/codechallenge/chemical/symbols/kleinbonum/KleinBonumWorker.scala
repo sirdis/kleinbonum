@@ -52,6 +52,9 @@ object KleinBonumWorker {
   /**
    * Create all pairs of characters that are legal due to the rules described in
    * {@link KleinBonum}.
+   * 
+   * Will fail on very long names (> 1000??) due to lacking (ugly) tail recursion
+   * 
    * @param chars the element name or substring thereof
    * @return Set of valid pairs
    */
