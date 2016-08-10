@@ -28,7 +28,7 @@ object KleinBonumWorker {
    * See {@link KleinBonum}.
    *
    * @param element chemical element name
-   * @return numbor of valid symbols for element
+   * @return number of valid symbols for element
    */
   def countPossibleSymbols(element: String) = {
     if (!boringStuff(element, "xx")) 0
@@ -50,7 +50,7 @@ object KleinBonumWorker {
   }
 
   /**
-   * Create all pairs of characters that are legal due to the rules decribed in
+   * Create all pairs of characters that are legal due to the rules described in
    * {@link KleinBonum}.
    * @param chars the element name or substring thereof
    * @return Set of valid pairs
